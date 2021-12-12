@@ -48,3 +48,17 @@ def plot_grouped_bar_vertical(first_month, second_month, third_month):
     plt.xticks([r + bar_width for r in range(len(common))], ['January', 'February', 'March'])
     plt.legend(loc="upper right")
     plt.savefig('results/message_type_month.png', bbox_inches='tight')
+
+
+def print_statistics(first_month, second_month, third_month):
+    print('\n---- Statistics for each month -----\n')
+    print(f'January:\n\tMaximum = {first_month[0]}\n\tMinimum = {first_month[1]}\n\tMean = {first_month[2]}\n\tMedian = {first_month[3]}\n\tStandard Deviation = {first_month[4]}\n\tVariance = {first_month[5]}')
+    print(f'February:\n\tMaximum = {second_month[0]}\n\tMinimum = {second_month[1]}\n\tMean = {second_month[2]}\n\tMedian = {second_month[3]}\n\tStandard Deviation = {second_month[4]}\n\tVariance = {second_month[5]}')
+    print(f'March:\n\tMaximum = {third_month[0]}\n\tMinimum = {third_month[1]}\n\tMean = {third_month[2]}\n\tMedian = {third_month[3]}\n\tStandard Deviation = {third_month[4]}\n\tVariance = {third_month[5]}\n')
+
+
+def print_longest_streak(first_month, second_month, third_month):
+    print('\n---- Longest messages streak for each month -----\n')
+    print(f'January: Messages Streak = {first_month[0]} and Date = {first_month[1]}')
+    print(f'February: Messages Streak = {second_month[0]} and Date = {second_month[1]}')
+    print(f'March: Messages Streak = {third_month[0]} and Date = {third_month[1]}\n')
