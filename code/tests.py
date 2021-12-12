@@ -1,9 +1,11 @@
 '''
+Some simple but useful tests for the challenge functions
 '''
 
-import functions as fun
 
 from unittest import TestCase
+
+import functions as fun
 
 
 class TestUnitary(TestCase):
@@ -26,7 +28,7 @@ class TestUnitary(TestCase):
         df = fun.get_sms_file('input/sms_senior.csv')
         result = fun.sum_msgs_months(df)
         self.assertEqual(int(result[1]), 747)
-    
+
     def test_result_get_statistics_total_one(self):
         df = fun.get_sms_file('input/sms_senior.csv')
         result = fun.get_statistics(df)
@@ -41,17 +43,17 @@ class TestUnitary(TestCase):
         df = fun.get_sms_file('input/sms_senior.csv')
         result = fun.get_statistics(df)
         self.assertEqual(float(result[2]), 16.222640832436312)
-    
+
     def test_result_get_statistics_total_four(self):
         df = fun.get_sms_file('input/sms_senior.csv')
         result = fun.get_statistics(df)
         self.assertEqual(int(result[3]), 13)
-    
+
     def test_result_get_statistics_total_five(self):
         df = fun.get_sms_file('input/sms_senior.csv')
         result = fun.get_statistics(df)
         self.assertEqual(float(result[4]), 11.767262023956693)
-    
+
     def test_result_get_statistics_total_six(self):
         df = fun.get_sms_file('input/sms_senior.csv')
         result = fun.get_statistics(df)

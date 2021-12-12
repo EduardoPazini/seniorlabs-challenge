@@ -1,4 +1,5 @@
 '''
+Plotting and printing the results of functions
 '''
 
 
@@ -15,7 +16,7 @@ def plot_bar_horizontal(data):
     for item in data:
         words.append(item[0])
         frequency.append(item[1])
-    
+
     plt.figure(figsize=(10,25))
     plt.barh(words, frequency, alpha = .6, color = 'royalblue')
     plt.title('Frequency of the most used common words')
@@ -30,7 +31,7 @@ def plot_grouped_bar_vertical(first_month, second_month, third_month):
     print(f'January: Common = {first_month[0]} and Spam = {first_month[1]}')
     print(f'February: Common = {second_month[0]} and Spam = {second_month[1]}')
     print(f'March: Common = {third_month[0]} and Spam = {third_month[1]}\n')
-    
+
     common = [first_month[0], second_month[0], third_month[0]]
     spam = [first_month[1], second_month[1], third_month[1]]
 
@@ -52,9 +53,15 @@ def plot_grouped_bar_vertical(first_month, second_month, third_month):
 
 def print_statistics(first_month, second_month, third_month):
     print('\n---- Statistics for each month -----\n')
-    print(f'January:\n\tMaximum = {first_month[0]}\n\tMinimum = {first_month[1]}\n\tMean = {first_month[2]}\n\tMedian = {first_month[3]}\n\tStandard Deviation = {first_month[4]}\n\tVariance = {first_month[5]}')
-    print(f'February:\n\tMaximum = {second_month[0]}\n\tMinimum = {second_month[1]}\n\tMean = {second_month[2]}\n\tMedian = {second_month[3]}\n\tStandard Deviation = {second_month[4]}\n\tVariance = {second_month[5]}')
-    print(f'March:\n\tMaximum = {third_month[0]}\n\tMinimum = {third_month[1]}\n\tMean = {third_month[2]}\n\tMedian = {third_month[3]}\n\tStandard Deviation = {third_month[4]}\n\tVariance = {third_month[5]}\n')
+    print(f'January:\n\tMaximum = {first_month[0]}\n\tMinimum = {first_month[1]}\n\tMean = '\
+        f'{first_month[2]}\n\tMedian = {first_month[3]}\n\tStandard Deviation = '\
+            f'{first_month[4]}\n\tVariance = {first_month[5]}')
+    print(f'February:\n\tMaximum = {second_month[0]}\n\tMinimum = {second_month[1]}\n\tMean = '\
+        f'{second_month[2]}\n\tMedian = {second_month[3]}\n\tStandard Deviation = '\
+            f'{second_month[4]}\n\tVariance = {second_month[5]}')
+    print(f'March:\n\tMaximum = {third_month[0]}\n\tMinimum = {third_month[1]}\n\tMean = '\
+        f'{third_month[2]}\n\tMedian = {third_month[3]}\n\tStandard Deviation = '\
+            f'{third_month[4]}\n\tVariance = {third_month[5]}\n')
 
 
 def print_longest_streak(first_month, second_month, third_month):

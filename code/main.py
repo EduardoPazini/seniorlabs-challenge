@@ -1,4 +1,5 @@
 '''
+Main module responsible for calling others
 '''
 
 
@@ -9,7 +10,7 @@ import plot_graphs as plt
 if __name__ == "__main__":
     file = 'input/sms_senior.csv'
     dataframe = fun.get_sms_file(file)
-    
+
     jan = dataframe.loc[(
         dataframe['Date'] > '2017-01-01 00:00:01') & (dataframe['Date'] <= '2017-01-31 23:59:59')]
     fev = dataframe.loc[(
@@ -19,7 +20,7 @@ if __name__ == "__main__":
 
     words_frequency = fun.sum_words_frequency(dataframe)
     plt.plot_bar_horizontal(words_frequency)
-    
+
     jan_list = fun.sum_msgs_months(jan)
     fev_list = fun.sum_msgs_months(fev)
     mar_list = fun.sum_msgs_months(mar)
