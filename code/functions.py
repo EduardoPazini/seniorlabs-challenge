@@ -35,7 +35,7 @@ def automatic_spam_detect(df):
     return accuracy
 
 
-def longest_common_streak(month_df, month, number_days):
+def longest_common_streak(month_df, month, number_days) -> list:
     days = ["%.2d" % i for i in range(number_days + 1)]
 
     k = 0
@@ -60,7 +60,7 @@ def longest_common_streak(month_df, month, number_days):
     return result
 
 
-def get_statistics(month_df):
+def get_statistics(month_df) -> list:
     max = month_df['Word_Count'].max()
     min = month_df['Word_Count'].min()
     mean = month_df['Word_Count'].mean()
@@ -72,7 +72,7 @@ def get_statistics(month_df):
     return result
 
 
-def sum_msgs_months(month_df):
+def sum_msgs_months(month_df) -> list:
     count_common = 0
     count_spam = 0
     
@@ -86,7 +86,7 @@ def sum_msgs_months(month_df):
     return result
 
 
-def sum_words_frequency(df):
+def sum_words_frequency(df) -> list:
     header = list(df.columns.values)
 
     # Removing the headers to keep only the words between 'got' and 'wan' in the list
@@ -99,13 +99,11 @@ def sum_words_frequency(df):
         total.append(df[word].sum())
 
     zipped = list(zip(header, total))
-    sort_words = sorted(zipped, key=lambda tup: tup[1], reverse=True)
-    return sort_words
+    sorted_words = sorted(zipped, key=lambda tup: tup[1], reverse=True)
+    return sorted_words
 
 
-def get_sms_file():
-    file = 'input/sms_senior.csv'
-    
+def get_sms_file(file):
     try:
         dt = pd.read_csv(file, encoding='unicode_escape')
         return dt

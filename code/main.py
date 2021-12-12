@@ -7,7 +7,8 @@ import plot_graphs as plt
 
 
 if __name__ == "__main__":
-    dataframe = fun.get_sms_file()
+    file = 'input/sms_senior.csv'
+    dataframe = fun.get_sms_file(file)
     
     jan = dataframe.loc[(
         dataframe['Date'] > '2017-01-01 00:00:01') & (dataframe['Date'] <= '2017-01-31 23:59:59')]
