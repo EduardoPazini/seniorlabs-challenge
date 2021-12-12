@@ -33,3 +33,6 @@ if __name__ == "__main__":
     fev_streak_list = fun.longest_common_streak(fev, '02', 28)
     mar_streak_list = fun.longest_common_streak(mar, '03', 31)
     plt.print_longest_streak(jan_streak_list, fev_streak_list, mar_streak_list)
+
+    accuracy = fun.automatic_spam_detect(dataframe)
+    plt.print_accuracy_automatic_spam_detect(accuracy)

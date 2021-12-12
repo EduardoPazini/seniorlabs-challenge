@@ -62,3 +62,8 @@ def print_longest_streak(first_month, second_month, third_month):
     print(f'January: Messages Streak = {first_month[0]} and Date = {first_month[1]}')
     print(f'February: Messages Streak = {second_month[0]} and Date = {second_month[1]}')
     print(f'March: Messages Streak = {third_month[0]} and Date = {third_month[1]}\n')
+
+
+def print_accuracy_automatic_spam_detect(accuracy):
+    print('\n---- Accuracy of automatic spam detection -----\n')
+    print(f'Accuracy: {accuracy}\n')
