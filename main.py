@@ -9,6 +9,20 @@ import plot_graphs as plt
 import sys
 
 
+def sum_msgs_months(month_df):
+    count_common = 0
+    count_spam = 0
+    
+    for index, row in month_df.iterrows():
+        if(row['IsSpam'] == 'no'):
+            count_common = count_common + 1
+        else:
+            count_spam = count_spam + 1
+
+    result = [count_common, count_spam]
+    return result
+
+
 def sum_words_frequency(df):
     header = list(df.columns.values)
     
@@ -45,3 +59,14 @@ if __name__ == "__main__":
     
     words_frequency = sum_words_frequency(dataframe)
     plt.plot_bar_horizontal(words_frequency)
+
+    jan = dataframe.loc[(
+        dataframe['Date'] > '2017-01-01 00:00:01') & (dataframe['Date'] <= '2017-01-31 23:59:59')]
+    fev = dataframe.loc[(
+        dataframe['Date'] > '2017-02-01 00:00:01') & (dataframe['Date'] <= '2017-02-31 23:59:59')]
+    mar = dataframe.loc[(
+        dataframe['Date'] > '2017-03-01 00:00:01') & (dataframe['Date'] <= '2017-03-31 23:59:59')]
+    jan_list = sum_msgs_months(jan)
+    fev_list = sum_msgs_months(fev)
+    mar_list = sum_msgs_months(mar)
+    plt.plot_grouped_bar_vertical(jan_list, fev_list, mar_list)
