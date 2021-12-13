@@ -1,4 +1,4 @@
-# Seniorlabs Challenge
+# Senior Labs Challenge
 
 Data science challenge resolution.
 

@@ -41,7 +41,7 @@ def plot_grouped_bar_vertical(first_month, second_month, third_month):
     r1 = np.arange(len(common))
     r2 = [x + bar_width for x in r1]
 
-    plt.bar(r1, common, color='royalblue', width=bar_width, label='Comum')
+    plt.bar(r1, common, color='royalblue', width=bar_width, label='Common')
     plt.bar(r2, spam, color='purple', width=bar_width, label='Spam')
     plt.title('Frequency of message types per month')
     plt.ylabel('Number of messages')
